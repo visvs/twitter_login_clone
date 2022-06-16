@@ -1,11 +1,11 @@
 :root{
     /*dark mode*/
     --blue-button: rgb(29 155 240); /*primary*/
-    --blue-tittle: rgb(3 89 225); 
-    --grey-terms: rgb(113 118 123);
-    --white_tittles:rgb(231 233 234);
-    /*light mode*/
-    --light-terms:rgb(83 100 113);
+    --blue-tittle: rgb(3 89 225);
+    --grey-terms: rgb(113 118 123); 
+    --dark-terms : #71767B;
+    --white_tittles:#E7E9EA;
+    --width: calc(100vw -790px);
 }
 *{
     box-sizing: border-box;
@@ -27,7 +27,7 @@ body{
     width: 100%;
     padding-left: 4rem;
 }
-.twitter-main_logo {
+.twitter-main_logo, .twitter-main_logo-dark{
     margin-top: 3.5rem;
     width: 4rem;    
 }
@@ -61,7 +61,8 @@ body{
     border-radius: 25px;
     border: 0.5px solid rgb(180, 175, 175);
     background-color: white;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 .second-login img{
     margin-right: 1rem;
@@ -84,6 +85,7 @@ body{
 .phone-login {  
     cursor:pointer;
     font-weight: 600;
+    font-size: 1.4rem;    
     width: 270px;
     padding: 1.2rem 2rem;
     border-radius: 25px; 
@@ -109,6 +111,8 @@ body{
     margin-bottom: 4.5rem;
     color: var(--blue-button);
     padding: 1.2rem 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 .sign_in-tittle{
     margin-top: 5.5rem;
@@ -152,4 +156,94 @@ footer a{
     text-align: center;
     font-size: 13px;
     height: 16px;
+}
+
+
+@media (min-width : 350px) {
+    .main-title,
+    .second-title {
+        width: 90%;        
+    }
+    .second-login, .phone-login {
+        width: 300px;
+    }
+    footer {       
+        height: 200px;          
+    }
+}
+@media (min-width : 500px) {
+    .main-title {
+        font-size: 6rem;
+        font-weight: 800;
+    }
+    .second-title {
+        font-size: 3.2rem;    
+    }
+    .second-login, .phone-login {
+        width: 300px;
+    }
+    footer {       
+        height: 130px;          
+    }
+    .twitter-background-section {
+        height: 285px;
+    }
+}
+@media (min-width : 800px) {    
+    footer {       
+        height: 90px;          
+    }   
+}
+@media (min-width : 1000px) {    
+    footer {       
+        height: 72px;          
+    }   
+    main {
+        display: flex;
+        flex-direction: row-reverse;        
+    }
+    .login-info-section {
+        background-color: white;
+        width: 790px;
+    }
+    .twitter-background-section {
+        width: 20%;
+        height: 100%;
+    }
+    .main-background {   
+        z-index: -1;
+        height: 100%;
+        width: auto;
+    }
+    .footer-logo {
+        height: calc(calc(100vw - 790px)*0.7);
+        right: calc(calc(100vw - 790px)*0.17);
+    }
+}
+/*Dark mode*/
+@media (prefers-color-scheme: dark) {
+    /* Dark theme styles go here */
+    .twitter-main_logo {
+       display: none;   
+    }
+    .main-title,
+    .second-title,
+    .sign_in-tittle {
+        color: var(--white_tittles);
+    }
+    body {
+        background-color: black;
+    }
+    footer a,
+    .terminos-content {
+        color: var(--dark-terms);
+    }
+    .sign_in {
+        background-color: transparent;
+    }
+    @media (min-width : 1000px) {                    
+        .login-info-section {
+            background-color: black;            
+        }        
+    }
 }
